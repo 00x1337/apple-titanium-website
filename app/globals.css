@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: black;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+.glow-desert {
+  box-shadow: 0 0 80px rgba(194, 163, 130, 0.25);
+}
+
+.glow-natural {
+  box-shadow: 0 0 80px rgba(155, 148, 138, 0.25);
+}
+
+.glow-white {
+  box-shadow: 0 0 80px rgba(227, 228, 229, 0.25);
+}
+
+.glow-black {
+  box-shadow: 0 0 80px rgba(47, 49, 51, 0.35);
+}
