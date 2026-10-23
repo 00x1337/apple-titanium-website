@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple (المملكة العربية السعودية) - iPhone 16 Pro</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      font-family: 'SF Pro Display', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: #000000;
+      color: #f5f5f7;
+      overflow-x: hidden;
+      selection-background-color: #2997ff;
+    }
+
+    /* Apple glass blur */
+    .apple-nav {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Titanium glow gradients */
+    .titanium-gradient {
+      background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .desert-glow {
+      background: radial-gradient(circle at 50% 50%, rgba(197, 160, 131, 0.15) 0%, transparent 70%);
+    }
+
+    /* Device color preview transitions */
+    .color-chip {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .color-chip.active {
+      transform: scale(1.18);
+      box-shadow: 0 0 0 2px #0071e3, 0 0 12px rgba(41, 151, 255, 0.5);
+    }
+
+    /* Specs card subtle border */
+    .apple-card {
+      background: #101012;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .apple-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-black text-[#f5f5f7]">
+
+  <!-- Top Apple Global Nav -->
+  <header class="fixed top-0 left-0 right-0 z-50 apple-nav">
+    <div class="max-w-5xl mx-auto px-4 h-12 flex items-center justify-between text-xs text-[#a1a1a6]">
+      <a href="#" class="text-white hover:opacity-70 transition-opacity">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 170 170">
+          <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.74 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.69-7.85-11.97-14.43-5.74-8.83-10.28-18.78-13.62-29.84-3.34-11.06-5.01-21.72-5.01-31.98 0-14.44 3.66-26.24 10.99-35.4 7.33-9.16 16.59-13.88 27.78-14.16 4.35 0 9.28 1.13 14.79 3.39 5.51 2.26 9.36 3.44 11.55 3.55 1.96-.11 5.92-1.34 11.89-3.69 5.97-2.35 10.74-3.41 14.3-3.18 10.99.68 19.86 4.75 26.62 12.22-9.59 5.79-14.28 13.91-14.07 24.36.21 8.25 3.35 15.11 9.42 20.58 6.07 5.47 13.25 8.52 21.53 9.15-2.29 7.03-5.27 14.17-8.94 21.43zM119.22 31.84c0-7.07 2.52-13.72 7.56-19.95 5.04-6.23 11.23-10.15 18.57-11.76.33 1.2.5 2.37.5 3.51 0 7.07-2.61 13.78-7.83 20.13-5.22 6.35-11.45 10.22-18.7 11.61-.1-.77-.1-2.45-.1-3.54z"/>
+        </svg>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 space-x-reverse">
+        <a href="#overview" class="hover:text-white transition-colors">نظرة عامة</a>
+        <a href="#specs" class="hover:text-white transition-colors">المواصفات التقنية</a>
+        <a href="#camera" class="hover:text-white transition-colors">الكاميرا الاحترافية</a>
+        <a href="#chip" class="hover:text-white transition-colors">شريحة A18 Pro</a>
+        <a href="#pricing" class="hover:text-white transition-colors">الأسعار والطلب</a>
+      </nav>
+      <div class="flex items-center space-x-4 space-x-reverse">
+        <button id="cartBtn" class="hover:text-white transition-colors p-1" title="سلة التسوق">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Product Bar -->
+  <div class="fixed top-12 left-0 right-0 z-40 bg-[#161617]/85 backdrop-blur-md border-b border-white/5 py-2.5">
+    <div class="max-w-5xl mx-auto px-4 flex items-center justify-between text-xs">
+      <div class="flex items-baseline gap-2">
+        <span class="text-white text-base font-semibold tracking-tight">iPhone 16 Pro</span>
+        <span class="text-[#86868b] text-[11px]">مُصمم للذكاء المطلق</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-white font-medium hidden sm:inline">يبدأ من 4,699 ر.س</span>
+        <a href="#pricing" class="bg-[#0071e3] hover:bg-[#0077ed] text-white px-3.5 py-1 rounded-full text-[11px] font-medium transition-all shadow-sm">شراء الآن</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="overview" class="pt-36 pb-20 relative overflow-hidden flex flex-col items-center text-center">
+    <!-- Ambient Desert Glow -->
+    <div class="absolute top-1/4 w-[600px] h-[600px] desert-glow pointer-events-none"></div>
+
+    <div class="max-w-3xl mx-auto px-4 relative z-10">
+      <span class="text-[#c5a083] font-medium text-sm tracking-wider uppercase mb-3 inline-block">iPhone 16 Pro</span>
+      <h1 class="text-5xl sm:text-7xl font-bold tracking-tight mb-4 titanium-gradient">
+        مرحباً بعصر التيتانيوم.
+      </h1>
+      <p class="text-lg sm:text-xl text-[#86868b] max-w-xl mx-auto mb-8 font-light leading-relaxed">
+        أقوى هيكل تيتانيوم من الدرجة الخامسة. شريحة A18 Pro الرائدة. نظام تحكم كاميرا ثوري وزر إجراءات جديد كلياً.
+      </p>
+
+      <!-- Color Switcher Control -->
+      <div class="flex flex-col items-center gap-3 mb-10">
+        <span id="currentColorLabel" class="text-xs text-[#86868b] font-medium">لون التيتانيوم الصحراوي (Desert Titanium)</span>
+        <div class="flex items-center gap-3 bg-[#161617] p-2 rounded-full border border-white/10">
+          <button onclick="changeColor('desert', 'لون التيتانيوم الصحراوي (Desert Titanium)', '#c5a083')" class="color-chip active w-6 h-6 rounded-full bg-[#c5a083]" title="Desert Titanium"></button>
+          <button onclick="changeColor('natural', 'لون التيتانيوم الطبيعي (Natural Titanium)', '#9f9a94')" class="color-chip w-6 h-6 rounded-full bg-[#9f9a94]" title="Natural Titanium"></button>
+          <button onclick="changeColor('white', 'لون التيتانيوم الأبيض (White Titanium)', '#f2f2f2')" class="color-chip w-6 h-6 rounded-full bg-[#e5e5ea]" title="White Titanium"></button>
+          <button onclick="changeColor('black', 'لون التيتانيوم الأسود (Black Titanium)', '#363638')" class="color-chip w-6 h-6 rounded-full bg-[#2c2c2e]" title="Black Titanium"></button>
+        </div>
+      </div>
+
+      <!-- Hero Device Visual Render (Pure SVG & CSS Apple Craft) -->
+      <div class="relative w-full max-w-md mx-auto aspect-[9/16] max-h-[460px] flex items-center justify-center">
+        <div id="deviceMockup" class="w-[260px] h-[460px] rounded-[48px] p-3 shadow-2xl transition-all duration-700 relative" style="background: linear-gradient(145deg, #2b2520, #171412); border: 4px solid #c5a083; box-shadow: 0 25px 60px -15px rgba(197, 160, 131, 0.35);">
+          <!-- Dynamic Island Notch -->
+          <div class="w-full h-full bg-black rounded-[40px] relative overflow-hidden flex flex-col justify-between p-4 border border-white/10">
+            <div class="w-20 h-5 bg-black mx-auto rounded-full mt-1 border border-white/10 flex items-center justify-end px-2">
+              <span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+            </div>
+            
+            <!-- Screen Display Content -->
+            <div class="my-auto text-center px-3">
+              <div class="inline-flex p-3 rounded-2xl bg-white/5 border border-white/10 mb-3 shadow-inner">
+                <i data-lucide="sparkles" class="w-7 h-7 text-[#c5a083]"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-1">Apple Intelligence</h3>
+              <p class="text-xs text-[#86868b] leading-relaxed">ذكاء شخصي، قوي، ومصمم لحماية خصوصيتك في كل لحظة.</p>
+            </div>
+
+            <!-- Lockscreen Action Bars -->
+            <div class="flex justify-between items-center px-4 mb-2">
+              <div class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
+                <i data-lucide="flashlight" class="w-4 h-4 text-white"></i>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
+                <i data-lucide="camera" class="w-4 h-4 text-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Highlights Grid -->
+  <section id="specs" class="py-20 bg-[#0a0a0c] border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-xs text-[#0071e3] font-semibold tracking-wider uppercase mb-2 inline-block">الابتكارات الكبرى</span>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white">نظرة أقرب على ما يصنع الفارق.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Camera Control -->
+        <div class="apple-card p-8 rounded-3xl md:col-span-2 relative overflow-hidden flex flex-col justify-between min-h-[300px]">
+          <div>
+            <span class="text-xs text-[#c5a083] font-semibold">تحكم الكاميرا</span>
+            <h3 class="text-2xl font-bold text-white mt-1 mb-3">زر لمسي مبتكر. وصول فوري إلى العدسة.</h3>
+            <p class="text-sm text-[#86868b] max-w-md leading-relaxed">
+              قم بالتمرير لضبط التكبير، التبديل بين الأنماط الفوتوغرافية، وتثبيت التعريض بنقرة واحدة سريعة واستجابة اهتزازية واقعية.
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-white font-mono">48MP Fusion Camera</span>
+            <span class="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-white font-mono">4K 120 fps Dolby</span>
+          </div>
+        </div>
+
+        <!-- Card 2: A18 Pro Chip -->
+        <div class="apple-card p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs text-[#2997ff] font-semibold">قوة خارقة</span>
+            <h3 class="text-2xl font-bold text-white mt-1 mb-2">A18 Pro</h3>
+            <p class="text-sm text-[#86868b] leading-relaxed">
+              معالج سداسي النوى هو الأسرع في أي هاتف ذكي، مع دعم تتبع الأشعة المسرّع بالعتاد لتجربة ألعاب كونسول واقعية.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-baseline">
+            <span class="text-3xl font-extrabold text-white tracking-tight">+20%</span>
+            <span class="text-xs text-[#86868b]">أداء أسرع في معالجة الجرافيكس</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Display -->
+        <div class="apple-card p-8 rounded-3xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs text-[#10b981] font-semibold">الشاشة</span>
+            <h3 class="text-2xl font-bold text-white mt-1 mb-2">Super Retina XDR</h3>
+            <p class="text-sm text-[#86868b] leading-relaxed">
+              حواف أنحف على الإطلاق، 120Hz ProMotion تكيفية، وسطوع خارجي يصل إلى 2000 شمعة/المتر المربع.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-baseline">
+            <span class="text-3xl font-extrabold text-white tracking-tight">6.3" & 6.9"</span>
+            <span class="text-xs text-[#86868b]">أكبر شاشات Pro على الإطلاق</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Battery -->
+        <div class="apple-card p-8 rounded-3xl md:col-span-2 flex flex-col justify-between">
+          <div>
+            <span class="text-xs text-[#a855f7] font-semibold">البطارية</span>
+            <h3 class="text-2xl font-bold text-white mt-1 mb-2">قفزة هائلة في عمر التشغيل.</h3>
+            <p class="text-sm text-[#86868b] max-w-lg leading-relaxed">
+              تصميم داخلي جديد كلياً وهيكل تيتانيوم يبدد الحرارة بكفاءة، مما يمنحك ما يصل إلى 33 ساعة من تشغيل الفيديو في طراز Pro Max.
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-4">
+            <div class="flex items-center gap-2">
+              <i data-lucide="battery-charging" class="w-5 h-5 text-[#10b981]"></i>
+              <span class="text-sm text-white font-medium">حتى 33 ساعة تشغيل</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="zap" class="w-5 h-5 text-[#f59e0b]"></i>
+              <span class="text-sm text-white font-medium">شحن MagSafe أسرع بـ 25W</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Pricing & Buy Calculator Section -->
+  <section id="pricing" class="py-24 bg-black relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-5xl font-bold text-white mb-3">اختر طرازك وسعتك التخزينية.</h2>
+        <p class="text-[#86868b] text-sm">شحن مجاني وسريع لجميع مناطق المملكة مع إرجاع سهل مجاناً.</p>
+      </div>
+
+      <!-- Interactive Calculator Card -->
+      <div class="apple-card p-8 sm:p-10 rounded-3xl">
+        <!-- Step 1: Model Choice -->
+        <div class="mb-8">
+          <label class="block text-xs text-[#86868b] uppercase tracking-wider font-semibold mb-3">1. اختر الطراز</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <button onclick="selectModel('pro', 4699)" id="modelPro" class="model-select-btn p-4 rounded-2xl border-2 border-[#0071e3] bg-white/5 text-right flex justify-between items-center transition-all">
+              <div>
+                <div class="text-base font-bold text-white">iPhone 16 Pro</div>
+                <div class="text-xs text-[#86868b]">شاشة 6.3 إنش</div>
+              </div>
+              <div class="text-sm font-semibold text-white">4,699 ر.س</div>
+            </button>
+            <button onclick="selectModel('promax', 5199)" id="modelProMax" class="model-select-btn p-4 rounded-2xl border border-white/10 hover:border-white/20 bg-transparent text-right flex justify-between items-center transition-all">
+              <div>
+                <div class="text-base font-bold text-white">iPhone 16 Pro Max</div>
+                <div class="text-xs text-[#86868b]">شاشة 6.9 إنش</div>
+              </div>
+              <div class="text-sm font-semibold text-white">5,199 ر.س</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Storage Choice -->
+        <div class="mb-8">
+          <label class="block text-xs text-[#86868b] uppercase tracking-wider font-semibold mb-3">2. اختر السعة التخزينية</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button onclick="selectStorage(128, 0)" class="storage-btn p-3 rounded-xl border-2 border-[#0071e3] bg-white/5 text-center transition-all">
+              <div class="text-lg font-bold text-white">128GB</div>
+              <div class="text-[11px] text-[#86868b]">الأساسي</div>
+            </button>
+            <button onclick="selectStorage(256, 400)" class="storage-btn p-3 rounded-xl border border-white/10 hover:border-white/20 text-center transition-all">
+              <div class="text-lg font-bold text-white">256GB</div>
+              <div class="text-[11px] text-[#86868b]">+400 ر.س</div>
+            </button>
+            <button onclick="selectStorage(512, 900)" class="storage-btn p-3 rounded-xl border border-white/10 hover:border-white/20 text-center transition-all">
+              <div class="text-lg font-bold text-white">512GB</div>
+              <div class="text-[11px] text-[#86868b]">+900 ر.س</div>
+            </button>
+            <button onclick="selectStorage(1024, 1500)" class="storage-btn p-3 rounded-xl border border-white/10 hover:border-white/20 text-center transition-all">
+              <div class="text-lg font-bold text-white">1TB</div>
+              <div class="text-[11px] text-[#86868b]">+1,500 ر.س</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Summary & Checkout Action -->
+        <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-[#86868b]">السعر الإجمالي شامل ضريبة القيمة المضافة:</div>
+            <div id="totalPrice" class="text-3xl font-extrabold text-white mt-0.5">4,699 ر.س</div>
+          </div>
+          <button onclick="showOrderSuccess()" class="w-full sm:w-auto bg-[#0071e3] hover:bg-[#0077ed] text-white px-8 py-3.5 rounded-full font-semibold text-sm transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>إتمام الطلب المسبق</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Order Toast / Modal -->
+  <div id="orderModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="apple-card max-w-sm w-full p-6 rounded-3xl text-center border border-white/20">
+      <div class="w-12 h-12 rounded-full bg-[#10b981]/10 text-[#10b981] mx-auto flex items-center justify-center mb-4">
+        <i data-lucide="check" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white mb-2">تم تجهيز طلبك بنجاح!</h3>
+      <p id="modalSummary" class="text-xs text-[#86868b] mb-6 leading-relaxed">iPhone 16 Pro بسعة 128GB بلون التيتانيوم الصحراوي جاهز للشحن.</p>
+      <button onclick="closeModal()" class="w-full bg-white/10 hover:bg-white/20 text-white py-2.5 rounded-full text-xs font-semibold transition-colors">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#101012] border-t border-white/5 py-10 text-xs text-[#86868b]">
+    <div class="max-w-5xl mx-auto px-4 space-y-4">
+      <p class="leading-relaxed">
+        1. شاشة الهاتف مستديرة الزوايا تتبع تصميماً منحنياً جميلاً. عندما تقاس كشكل مستطيل قياسي، يكون قطرها 6.27 إنش (iPhone 16 Pro) أو 6.86 إنش (iPhone 16 Pro Max). المساحة الفعلية القابلة للمشاهدة أقل.
+      </p>
+      <div class="pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>حقوق النشر © 2026 Apple Inc. جميع الحقوق محفوظة. المملكة العربية السعودية.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a>
+          <a href="#" class="hover:text-white transition-colors">شروط الاستخدام</a>
+          <a href="#" class="hover:text-white transition-colors">المبيعات والاسترداد</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Script -->
+  <script>
+    lucide.createIcons();
+
+    let basePrice = 4699;
+    let storageAddon = 0;
+    let selectedColorName = 'لون التيتانيوم الصحراوي (Desert Titanium)';
+    let selectedModelName = 'iPhone 16 Pro';
+    let selectedStorageName = '128GB';
+
+    const colors = {
+      desert: {
+        border: '#c5a083',
+        gradient: 'linear-gradient(145deg, #2b2520, #171412)',
+        glow: 'rgba(197, 160, 131, 0.35)'
+      },
+      natural: {
+        border: '#9f9a94',
+        gradient: 'linear-gradient(145deg, #242426, #161617)',
+        glow: 'rgba(159, 154, 148, 0.3)'
+      },
+      white: {
+        border: '#e5e5ea',
+        gradient: 'linear-gradient(145deg, #2f2f32, #1a1a1c)',
+        glow: 'rgba(242, 242, 242, 0.3)'
+      },
+      black: {
+        border: '#48484a',
+        gradient: 'linear-gradient(145deg, #1f1f22, #0d0d0e)',
+        glow: 'rgba(54, 54, 56, 0.4)'
+      }
+    };
+
+    function changeColor(key, label, hex) {
+      selectedColorName = label;
+      document.getElementById('currentColorLabel').innerText = label;
+      
+      document.querySelectorAll('.color-chip').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const mockup = document.getElementById('deviceMockup');
+      const c = colors[key];
+      mockup.style.borderColor = c.border;
+      mockup.style.background = c.gradient;
+      mockup.style.boxShadow = `0 25px 60px -15px ${c.glow}`;
+    }
+
+    function selectModel(type, price) {
+      basePrice = price;
+      selectedModelName = type === 'pro' ? 'iPhone 16 Pro' : 'iPhone 16 Pro Max';
+
+      const btnPro = document.getElementById('modelPro');
+      const btnProMax = document.getElementById('modelProMax');
+
+      if (type === 'pro') {
+        btnPro.className = 'model-select-btn p-4 rounded-2xl border-2 border-[#0071e3] bg-white/5 text-right flex justify-between items-center transition-all';
+        btnProMax.className = 'model-select-btn p-4 rounded-2xl border border-white/10 hover:border-white/20 bg-transparent text-right flex justify-between items-center transition-all';
+      } else {
+        btnProMax.className = 'model-select-btn p-4 rounded-2xl border-2 border-[#0071e3] bg-white/5 text-right flex justify-between items-center transition-all';
+        btnPro.className = 'model-select-btn p-4 rounded-2xl border border-white/10 hover:border-white/20 bg-transparent text-right flex justify-between items-center transition-all';
+      }
+      updatePrice();
+    }
+
+    function selectStorage(size, addon) {
+      storageAddon = addon;
+      selectedStorageName = size >= 1024 ? '1TB' : size + 'GB';
+
+      document.querySelectorAll('.storage-btn').forEach(btn => {
+        btn.className = 'storage-btn p-3 rounded-xl border border-white/10 hover:border-white/20 text-center transition-all';
+      });
+      event.currentTarget.className = 'storage-btn p-3 rounded-xl border-2 border-[#0071e3] bg-white/5 text-center transition-all';
+
+      updatePrice();
+    }
+
+    function updatePrice() {
+      const total = basePrice + storageAddon;
+      document.getElementById('totalPrice').innerText = total.toLocaleString() + ' ر.س';
+    }
+
+    function showOrderSuccess() {
+      const total = basePrice + storageAddon;
+      document.getElementById('modalSummary').innerText = `${selectedModelName} بسعة ${selectedStorageName} بـ ${selectedColorName} - الإجمالي: ${total.toLocaleString()} ر.س.`;
+      document.getElementById('orderModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('orderModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
