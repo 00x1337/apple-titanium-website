@@ -2,8 +2,8 @@ import './globals.css';
 import React from 'react';
 
 export const metadata = {
-  title: 'iPhone 16 Pro - Apple (SA)',
-  description: 'Forged in Titanium. Powered by A18 Pro.',
+  title: 'TitaniumJB | جيلبريك آيفون المطور لجميع إصدارات iOS',
+  description: 'أداة الجيلبريك الحديثة لـ iOS 15 - iOS 18. فحص التوافق، تثبيت TrollStore، وتحميل متجر Sileo وأحدث الأدوات.',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className="bg-black text-white antialiased selection:bg-neutral-800 selection:text-white">
+      <body className="bg-[#07080b] text-white antialiased selection:bg-[#00ff88]/30 selection:text-[#00ff88]">
         {children}
       </body>
     </html>
